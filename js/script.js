@@ -30,7 +30,8 @@ createApp({
                     text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
                 }
             ],
-            currentElement:0
+            currentElement:0,
+            startInterval:"",
         
         }
     },
@@ -47,9 +48,22 @@ createApp({
         this.currentElement--;
         else
         this.currentElement=this.slides.length-1;
-        }
+        },
+    changeSlider:function(currentPosition){
+        this.currentElement=currentPosition;
+    },
 
+    startRepeat:function(){
+        this.startInterval=setInterval(this.slideUp,1000)
+    },
+    stopRepeatInterval:function(){
+        clearInterval(this.startInterval);
     
+    }
+    
+},
+    created:function(){
+        this.startRepeat();
     }
 
 
