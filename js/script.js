@@ -54,7 +54,7 @@ createApp({
     },
 
     startRepeat:function(){
-        this.startInterval=setInterval(this.slideUp,1000)
+        this.startInterval=setInterval(this.slideUp,3000)
     },
     stopRepeatInterval:function(){
         clearInterval(this.startInterval);
